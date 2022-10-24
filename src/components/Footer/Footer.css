@@ -1,0 +1,12 @@
+.Footer {
+  display: flex;
+  width: 100%;
+  background: rgb(20, 19, 19);
+  height: auto;
+  bottom: 0;
+  z-index: -1;
+}
+
+.logo {
+  margin: 50px;
+}

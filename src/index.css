@@ -1,0 +1,15 @@
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Anek Telugu';
+  font-size: 22px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: -2;
+  background: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

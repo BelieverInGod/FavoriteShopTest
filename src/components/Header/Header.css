@@ -1,0 +1,15 @@
+.Header {
+  display: flex;
+  width: 100%;
+  background: #ffcc26;
+  justify-content: flex-end;
+  border-bottom: 1px solid black;
+}
+
+.Header p {
+  margin-right: 50px;
+}
+
+.logo {
+  margin: 50px;
+}

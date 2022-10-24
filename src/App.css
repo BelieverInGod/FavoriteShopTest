@@ -1,0 +1,6 @@
+.mainPage {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  background: white;
+}

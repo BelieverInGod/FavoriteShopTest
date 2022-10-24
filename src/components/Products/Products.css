@@ -1,0 +1,107 @@
+.Products {
+  margin: 50px;
+  width: 100vw;
+  background: white;
+}
+
+.productContainer {
+  max-height: 257px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0, 0.5);
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  overflow: hidden;
+  border: 1px dashed #414141;
+  font-family: 'Poppins';
+  font-size: 22px;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+}
+
+.productContainer:hover {
+  transform: scale(1.05);
+}
+
+.priceBox {
+  border-top: 1px solid #414141;
+  justify-content: space-around;
+  width: 100%;
+  display: flex;
+  z-index: 0;
+  font-size: medium;
+  height: auto;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .priceBox {
+    height: 50px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .priceBox {
+    height: 20px;
+    font-size: 5px;
+
+  }
+}
+
+.imgProductContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.imgProduct {
+  width: 80%;
+  height: 50%;
+}
+
+.btn {
+  border-radius: 15px;
+  display: flex;
+  width: 150px;
+  text-align: center;
+  align-items: center;
+  padding-inline: 20px;
+  height: 50px;
+  background: rgb(44, 40, 40);
+  border: 0;
+  color: white;
+  margin-top: 25px;
+  margin-inline: auto;
+  transition: 0.3s;
+  font-size: large;
+}
+
+.btn:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 5px rgba(0,0,0, 0.5);
+}
+
+.visiblePost {
+  display: flex;
+  justify-content: flex-end;
+  margin: 25px;
+  width: 95%;
+  height: 30px;
+}
+
+.lessPostIcon {
+  margin-right: 10px;
+}
+
+.morePostIcon {
+  margin-right: 10px;
+}
+
+.active {
+  box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+  width: 20px;
+  margin-right: 10px;
+  height: 20px;
+}
+
