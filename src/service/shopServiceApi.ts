@@ -4,21 +4,23 @@ const api = axios.create({
     baseURL: 'https://testbackend.nc-one.com',
 })
 
-type User = {
+export type Data = {
     id: number;
-    price: string;
+    name: string;
+    price: number;
     src: string;
-  };
+    like: boolean
+};
 
-type GetUsersResponse = {
-    data: User[];
-  };
+export type GetDataResponse = {
+    data: Data[];
+};
 
 export const shopServiceApi = {
     getCategories():any {
-        return api.get<GetUsersResponse>('image')
+        return api.get<GetDataResponse>('image')
     },
     getProduct():any {
-        return api.get<GetUsersResponse>(`/image`)
+        return api.get<GetDataResponse>(`/image`)
     },
 }

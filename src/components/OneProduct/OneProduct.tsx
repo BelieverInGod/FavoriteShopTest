@@ -32,7 +32,9 @@ function OneProduct({products, setLike, id, setId}: any) {
                                     }
                                 </div>
                             </div>
-                            <div className='BackToMain' onClick={() => setId(0)}>Back to main</div>
+                            <div className='BackToMain'>
+                                <p onClick={() => setId(0)}>Back to main</p>
+                            </div>
                         </div>
                     }
                     }

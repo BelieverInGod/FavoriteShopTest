@@ -1,10 +1,11 @@
 import './FavoriteBar.css'
 import {setLike, setMoreProducts, setProducts} from "../../redux/ProductsReducer";
 import {connect} from "react-redux";
+import {Data} from "../../service/shopServiceApi";
 import likeIcon from '../../assets/image/likeIcon.png'
 
 
-function FavoriteBar({ setProducts, setLike, products}: any) {
+function FavoriteBar({ id, setId, products}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
 
     return (
@@ -14,11 +15,11 @@ function FavoriteBar({ setProducts, setLike, products}: any) {
                 <div className='ProductsContainer'>
                     {products !== undefined && products.map((item: any) => {
                         if(item.like) {
-                            return(<div className={'favoriteProductContainer'}>
-                                <div className='imgFavoriteProductContainer'>
+                            return(<div className={'favoriteProductContainer'} onClick={() => setId(item.id)}>
+                                <div className='imgFavoriteProductContainer' >
                                     {
                                         item.src ?
-                                        <img src={srcImg + item.src} alt={item.id} className='imgFavoriteProduct'/> : 
+                                        <img src={srcImg + item.src}  alt={item.id} className='imgFavoriteProduct'/> :
                                         <img src={likeIcon} alt={item.id} className='imgProduct'/>
                                     }
                                 </div>

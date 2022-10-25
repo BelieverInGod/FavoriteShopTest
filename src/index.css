@@ -1,29 +1,38 @@
 body {
-  height: 100vh;
-  margin: 0;
-  font-family: 'Anek Telugu';
-  font-size: 22px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  z-index: -2;
-  background: white;
-  overflow-x: hidden;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Anek Telugu';
+    font-size: 22px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: -2;
+    background: white;
+    overflow-x: hidden;
+}
+
+img {
+    cursor: pointer;
+}
+
+p {
+    cursor: pointer;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #FFCC26;    
-  border-radius: 15px;    
-  height: 100px;  
+    background-color: #FFCC26;
+    border-radius: 15px;
+    height: 100px;
 }
+
 body::-webkit-scrollbar-track {
-  background: #41414152;   
+    background: #41414152;
 }
-   
+
 body::-webkit-scrollbar {
-  width: 12px;              
+    width: 12px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

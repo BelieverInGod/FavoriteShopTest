@@ -5,26 +5,34 @@ import redLike from '../../assets/image/redLike.png'
 
 import * as React from 'react';
 import {connect} from "react-redux";
-import {setLike, setMoreProducts, setProducts} from "../../redux/ProductsReducer";
-import {useEffect, useState} from "react";
-import {shopServiceApi} from "../../service/shopServiceApi";
+import {setLike, setProducts} from "../../redux/ProductsReducer";
+import {useEffect} from "react";
+import {Data, GetDataResponse, shopServiceApi} from "../../service/shopServiceApi";
 import {Grid} from '@mui/material';
-
 
 
 function Products({products, setProducts, setLike, id, setId}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
 
     useEffect(() => {
-        (async () => {
-            const res = await shopServiceApi.getProduct().then((response: any) => {
-                response.data.map((item: any) => {
-                    item.like = false
-                })
-                setProducts(response.data)
-            });
-        })()
-    }, [])
+        JSON.parse(localStorage.getItem("names") || '{}')
+            ?
+            setProducts(JSON.parse(localStorage.getItem("names") || '{}')) :
+            (async () => {
+                await shopServiceApi.getProduct().then((response: GetDataResponse) => {
+                    response.data.map((item: Data) => {
+                        item.like = false
+                    })
+                    setProducts(response.data)
+                    localStorage.setItem("names", JSON.stringify(response.data));
+                });
+            })()
+    }, [id])
+
+    const likeInLocal = (id: number, bool: boolean) => {
+        setLike(id, bool)
+        localStorage.setItem("names", JSON.stringify(products));
+    }
 
     return (
         <div className="Products">
@@ -35,8 +43,8 @@ function Products({products, setProducts, setLike, id, setId}: any) {
                             <div className='imgProductContainer' onClick={() => setId(item.id)}>
                                 {
                                     item.src ?
-                                    <img src={srcImg + item.src} alt={item.id} className='imgProduct'/> : 
-                                    <img src={likeIcon} alt={item.id} className='imgProduct'/>
+                                        <img src={srcImg + item.src} alt={item.id} className='imgProduct'/> :
+                                        <img src={likeIcon} alt={item.id} className='imgProduct'/>
                                 }
                             </div>
                             <div className={'priceBox'}>
@@ -48,8 +56,9 @@ function Products({products, setProducts, setLike, id, setId}: any) {
                                     {
                                         !item.like ?
                                             <img src={likeIcon} alt={'likeIcon'}
-                                                 onClick={() => setLike(item.id, true)}/> :
-                                            <img src={redLike} className={'active-like'} alt={'redLike'} onClick={() => setLike(item.id, false)}/>
+                                                 onClick={() => likeInLocal(item.id, true)}/> :
+                                            <img src={redLike} className={'active-like'} alt={'redLike'}
+                                                 onClick={() => likeInLocal(item.id, false)}/>
                                     }
                                 </div>
                             </div>

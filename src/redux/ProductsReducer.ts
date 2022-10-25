@@ -1,4 +1,4 @@
-import {AnyAction, Dispatch} from "redux";
+import {AnyAction} from "redux";
 
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const SET_MORE_PRODUCT = 'SET_MORE_PRODUCT';

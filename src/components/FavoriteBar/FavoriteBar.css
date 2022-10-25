@@ -1,77 +1,86 @@
 .FavoriteBarContainer {
-  font-family: 'Poppins';
-  margin: 50px;
-  height: 80vh;
-  z-index: 1;
-  min-width: 20%;
-  position: relative;
+    font-family: 'Poppins';
+    margin: 50px;
+    height: 80vh;
+    z-index: 1;
+    min-width: 20%;
+    position: relative;
 }
 
 .FavoriteBar {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border: 2px dashed #414141;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  position: fixed;
-  min-height: 75vh;
-  width: 20%;
-  z-index: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 2px dashed #414141;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: fixed;
+    min-height: 75vh;
+    width: 20%;
+    z-index: 1;
 }
 
 .ProductsContainer {
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  height: 80%;
-  width: 100%;
-  align-items: center;
-  text-align: center;
-}
-
-.ProductsContainer::-webkit-scrollbar-thumb {
-  background-color: #FFCC26;    
-  border-radius: 15px;    
-  height: 100px;  
-}
-
-.ProductsContainer::-webkit-scrollbar-track {
-  background: #41414152; 
-  border-radius: 15px;    
-}
-
-.ProductsContainer::-webkit-scrollbar {
-  width: 12px; 
-}
-
-.FavoriteBar p {
-  font-size: 18px;
-  font-family: 'Anek Telugu';
-}
-
-.FavoriteBar a {
-  padding: 5px;
-  color: black;
-  text-decoration: none;
-  transition: 0.5s;
+    cursor: pointer;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 80%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
 }
 
 .favoriteProductContainer {
-  margin-top: 10px;
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  background: #FBFBFB;
-  border-radius: 30px;
+    transition: all .2s ease-in-out;
+}
+
+.favoriteProductContainer:hover {
+    transform: scale(1.05);
+}
+
+.ProductsContainer::-webkit-scrollbar-thumb {
+    background-color: #FFCC26;
+    border-radius: 15px;
+    height: 100px;
+}
+
+.ProductsContainer::-webkit-scrollbar-track {
+    background: #41414152;
+    border-radius: 15px;
+}
+
+.ProductsContainer::-webkit-scrollbar {
+    width: 12px;
+}
+
+.FavoriteBar p {
+    font-size: 18px;
+    font-family: 'Anek Telugu';
+}
+
+.FavoriteBar a {
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.favoriteProductContainer {
+    margin-top: 10px;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    background: #FBFBFB;
+    border-radius: 30px;
 }
 
 .imgFavoriteProduct {
-  width: 100px;
-  height: 80px;
+    width: 100px;
+    height: 80px;
 }
