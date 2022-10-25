@@ -9,12 +9,10 @@ import {setLike, setMoreProducts, setProducts} from "../../redux/ProductsReducer
 import {useEffect, useState} from "react";
 import {shopServiceApi} from "../../service/shopServiceApi";
 import {Grid} from '@mui/material';
-import {useParams} from "react-router-dom";
-import {NavLink} from "react-router-dom";
 
 
-function Products({products, setProducts, setLike, page, setPage}: any) {
-    const {id} = useParams()
+
+function Products({products, setProducts, setLike, id, setId}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
 
     useEffect(() => {
@@ -34,7 +32,7 @@ function Products({products, setProducts, setLike, page, setPage}: any) {
                 {products !== undefined && products.map((item: any) => <Grid key={item.id} item
                                                                              xs={3}>
                         <div className={'productContainer'}>
-                            <div className='imgProductContainer'>
+                            <div className='imgProductContainer' onClick={() => setId(item.id)}>
                                 {
                                     item.src ?
                                     <img src={srcImg + item.src} alt={item.id} className='imgProduct'/> : 
@@ -59,7 +57,6 @@ function Products({products, setProducts, setLike, page, setPage}: any) {
                     </Grid>
                 )}
             </Grid>
-            <button onClick={() => setPage(page + 12)} className={'btn'}>Load more...</button>
         </div>
     );
 }

@@ -5,20 +5,22 @@ import Header from './components/Header/Header'
 import Products from './components/Products/Products'
 import FavoriteBar from './components/FavoriteBar/FavoriteBar'
 import Footer from './components/Footer/Footer'
+import OneProduct from './components/OneProduct/OneProduct'
 import {Navigate, Route, Routes} from "react-router-dom";
 
 function App() {
-    const [page, setPage] = useState(12)
-
+    const [id, setId] = useState(0)
+    
     return (
     <div className="App">
       <Header />
       <div className='mainPage'>
-        <FavoriteBar page={page} setPage={setPage} />
+        <FavoriteBar id={id} setId={setId} />
           <Routes>
-              {/* <Route path="/" element={<Navigate to="/сategory/1/Post" />}/> */}
-              <Route path={'/'} element={<Products page={page} setPage={setPage} />} />
-              {/* <Route path={'/сategory/:id/Post'} element={<Products page={page} setPage={setPage} />} /> */}
+              { id === 0 ?
+                <Route path={'/'} element={<Products id={id} setId={setId} />} /> :
+                <Route path={'/'} element={<OneProduct id={id} setId={setId} />} />
+              }
           </Routes>
       </div>
       <Footer />

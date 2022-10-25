@@ -3,4 +3,5 @@
   flex-direction: row;
   width: 100vw;
   background: white;
+  justify-content: space-around;
 }

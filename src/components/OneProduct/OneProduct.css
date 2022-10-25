@@ -1,0 +1,37 @@
+.OneProduct {
+    margin: 50px;
+    width: 100%;
+    background: white;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.OneProductContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    background: white;
+}
+
+.priceOneProductBox {
+    margin: 50px;
+}
+
+.imgOneProductContainer {
+    border-radius: 35px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.imgOneProduct {
+    width: 100%;
+    height: 100%;
+}
+
+.BackToMain {
+    display: flex;
+    text-align: end;
+    width: 20%;
+    cursor: pointer;
+}

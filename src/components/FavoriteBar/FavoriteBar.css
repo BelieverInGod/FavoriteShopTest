@@ -25,9 +25,12 @@
 .ProductsContainer {
   overflow: scroll;
   display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   height: 80%;
   width: 100%;
+  align-items: center;
+  text-align: center;
 }
 
 .ProductsContainer::-webkit-scrollbar-thumb {
@@ -58,6 +61,7 @@
 }
 
 .favoriteProductContainer {
+  margin-top: 10px;
   justify-content: space-around;
   align-items: center;
   display: flex;
