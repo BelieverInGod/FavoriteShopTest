@@ -7,6 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   z-index: -2;
   background: white;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #FFCC26;    
+  border-radius: 15px;    
+  height: 100px;  
+}
+body::-webkit-scrollbar-track {
+  background: #41414152;   
+}
+   
+body::-webkit-scrollbar {
+  width: 12px;              
 }
 
 code {

@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
 import './FavoriteBar.css'
-import {shopServiceApi} from "../../service/shopServiceApi";
 import {setLike, setMoreProducts, setProducts} from "../../redux/ProductsReducer";
 import {connect} from "react-redux";
+import likeIcon from '../../assets/image/likeIcon.png'
+
 
 function FavoriteBar({ setProducts, setLike, products}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
@@ -11,22 +11,28 @@ function FavoriteBar({ setProducts, setLike, products}: any) {
         <div className="FavoriteBarContainer">
             <div className="FavoriteBar">
                 <p>FAVORIVE</p>
-                {products !== undefined && products.map((item: any) => {
-                    if(item.like) {
-                        return(<div className={'favoriteProductContainer'}>
-                            <div className='imgFavoriteProductContainer'>
-                                <img src={srcImg + item.src} alt={item.id} className='imgFavoriteProduct'/>
-                            </div>
-                            <div className={'favoritePriceBox'}>
-                                <div>
-                                    <p>{item.name}</p>
-                                    <p>$ {item.price}</p>
+                <div className='ProductsContainer'>
+                    {products !== undefined && products.map((item: any) => {
+                        if(item.like) {
+                            return(<div className={'favoriteProductContainer'}>
+                                <div className='imgFavoriteProductContainer'>
+                                    {
+                                        item.src ?
+                                        <img src={srcImg + item.src} alt={item.id} className='imgFavoriteProduct'/> : 
+                                        <img src={likeIcon} alt={item.id} className='imgProduct'/>
+                                    }
                                 </div>
-                            </div>
-                        </div>)
+                                <div className={'favoritePriceBox'}>
+                                    <div>
+                                        <p>{item.name}</p>
+                                        <p>$ {item.price}</p>
+                                    </div>
+                                </div>
+                            </div>)
+                        }
                     }
-                }
-                )}
+                    )}
+                </div>
             </div>
         </div>
         

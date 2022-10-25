@@ -1,8 +1,7 @@
 import './Products.css';
 import likeIcon from '../../assets/image/likeIcon.png'
 import redLike from '../../assets/image/redLike.png'
-import morePostIcon from '../../assets/image/4.png'
-import lessPostIcon from '../../assets/image/lessPost.png'
+
 
 import * as React from 'react';
 import {connect} from "react-redux";
@@ -36,7 +35,11 @@ function Products({products, setProducts, setLike, page, setPage}: any) {
                                                                              xs={3}>
                         <div className={'productContainer'}>
                             <div className='imgProductContainer'>
-                                <img src={srcImg + item.src} alt={item.id} className='imgProduct'/>
+                                {
+                                    item.src ?
+                                    <img src={srcImg + item.src} alt={item.id} className='imgProduct'/> : 
+                                    <img src={likeIcon} alt={item.id} className='imgProduct'/>
+                                }
                             </div>
                             <div className={'priceBox'}>
                                 <div>
@@ -48,7 +51,7 @@ function Products({products, setProducts, setLike, page, setPage}: any) {
                                         !item.like ?
                                             <img src={likeIcon} alt={'likeIcon'}
                                                  onClick={() => setLike(item.id, true)}/> :
-                                            <img src={redLike} alt={'redLike'} onClick={() => setLike(item.id, false)}/>
+                                            <img src={redLike} className={'active-like'} alt={'redLike'} onClick={() => setLike(item.id, false)}/>
                                     }
                                 </div>
                             </div>

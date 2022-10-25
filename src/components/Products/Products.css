@@ -56,8 +56,14 @@
 }
 
 .imgProduct {
-  width: 80%;
-  height: 50%;
+  width: 60%;
+  height: 40%;
+}
+
+.active-like {
+  background: #414141;
+  border-radius: 15%;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .btn {
@@ -82,26 +88,5 @@
   box-shadow: 0 0 5px rgba(0,0,0, 0.5);
 }
 
-.visiblePost {
-  display: flex;
-  justify-content: flex-end;
-  margin: 25px;
-  width: 95%;
-  height: 30px;
-}
 
-.lessPostIcon {
-  margin-right: 10px;
-}
-
-.morePostIcon {
-  margin-right: 10px;
-}
-
-.active {
-  box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
-  width: 20px;
-  margin-right: 10px;
-  height: 20px;
-}
 

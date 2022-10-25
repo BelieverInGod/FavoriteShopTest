@@ -19,6 +19,30 @@
   position: fixed;
   min-height: 75vh;
   width: 20%;
+  z-index: 1;
+}
+
+.ProductsContainer {
+  overflow: scroll;
+  display: flex;
+  overflow-x: hidden;
+  height: 80%;
+  width: 100%;
+}
+
+.ProductsContainer::-webkit-scrollbar-thumb {
+  background-color: #FFCC26;    
+  border-radius: 15px;    
+  height: 100px;  
+}
+
+.ProductsContainer::-webkit-scrollbar-track {
+  background: #41414152; 
+  border-radius: 15px;    
+}
+
+.ProductsContainer::-webkit-scrollbar {
+  width: 12px; 
 }
 
 .FavoriteBar p {
