@@ -17,8 +17,8 @@ export type GetDataResponse = {
 };
 
 export const shopServiceApi = {
-    getCategories():any {
-        return api.get<GetDataResponse>('image')
+    getOneProduct(id: string | undefined):any {
+        return api.get<Data>(`/image?id=${id}`)
     },
     getProduct():any {
         return api.get<GetDataResponse>(`/image`)

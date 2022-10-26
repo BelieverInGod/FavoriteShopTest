@@ -1,13 +1,10 @@
-import './Header.css';
+import './Header.scss';
 
 function Header() {
+   
     return (
         <header className="Header">
-            {/*{*/}
-            {/*    id === 0 ?*/}
-            {/*        <p>PRODUCT LIST PAGE</p> :*/}
-            {/*        <p>PRODUCT PAGE</p>*/}
-            {/*}*/}
+                <p>PRODUCT PAGE</p>     
         </header>
     );
 }
