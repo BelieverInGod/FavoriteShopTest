@@ -12,11 +12,10 @@ import { Link } from 'react-router-dom';
 
 function Products({products, setProducts, setLike}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
-
     useEffect(() => {
-        // JSON.parse(localStorage.getItem("names") || '{}') 
-        //     ?
-        //     setProducts(JSON.parse(localStorage.getItem("names") || '{}')) :
+        localStorage.length !== 0
+            ?
+            setProducts(JSON.parse(localStorage.getItem("names") || '{}')) :
             (async () => {
                 await shopServiceApi.getProduct().then((response: GetDataResponse) => {
                     response.data.map((item: Data) => {
