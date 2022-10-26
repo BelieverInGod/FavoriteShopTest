@@ -25,14 +25,17 @@
     padding: 10px;
     transition: all .2s ease-in-out;
     @media screen and (max-width: 1000px) {
-      font-size: 10px;
-      width: 100px;
+      font-size: 20px;
+      width: 150px;
     }
-
 
     .imgProductContainer {
       display: flex;
       justify-content: center;
+      border-bottom: 1px solid #414141;
+      @media screen and (max-width: 1000px) {
+        border-bottom: 0;
+      }
 
       .imgProduct {
         width: 60%;
@@ -41,7 +44,6 @@
     }
 
     .priceBox {
-      border-top: 1px solid #414141;
       justify-content: space-around;
       width: 100%;
       display: flex;
@@ -64,7 +66,7 @@
 
       @media screen and (max-width: 660px) {
         height: 20px;
-        font-size: 5px;
+        font-size: 10px;
       }
     }
   }
