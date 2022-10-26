@@ -3,7 +3,11 @@ import './Header.css';
 function Header() {
     return (
         <header className="Header">
-            <p>PRODUCT LIST PAGE</p>
+            {/*{*/}
+            {/*    id === 0 ?*/}
+            {/*        <p>PRODUCT LIST PAGE</p> :*/}
+            {/*        <p>PRODUCT PAGE</p>*/}
+            {/*}*/}
         </header>
     );
 }

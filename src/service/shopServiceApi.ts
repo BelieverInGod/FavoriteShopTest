@@ -5,11 +5,11 @@ const api = axios.create({
 })
 
 export type Data = {
-    id: number;
+    id: string;
     name: string;
     price: number;
     src: string;
-    like: boolean
+    like: boolean;
 };
 
 export type GetDataResponse = {

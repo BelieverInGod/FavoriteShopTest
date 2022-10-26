@@ -29,7 +29,7 @@ function Products({products, setProducts, setLike, id, setId}: any) {
             })()
     }, [id])
 
-    const likeInLocal = (id: number, bool: boolean) => {
+    const likeInLocal = (id: string, bool: boolean) => {
         setLike(id, bool)
         localStorage.setItem("names", JSON.stringify(products));
     }
@@ -37,7 +37,7 @@ function Products({products, setProducts, setLike, id, setId}: any) {
     return (
         <div className="Products">
             <Grid container rowSpacing={2} columnSpacing={2} xs={12}>
-                {products !== undefined && products.map((item: any) => <Grid key={item.id} item
+                {products !== undefined && products.map((item: Data) => <Grid key={item.id} item
                                                                              xs={3}>
                         <div className={'productContainer'}>
                             <div className='imgProductContainer' onClick={() => setId(item.id)}>

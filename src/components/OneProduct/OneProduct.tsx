@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {setLike, setProducts} from "../../redux/ProductsReducer";
 import likeIcon from '../../assets/image/likeIcon.png'
 import redLike from '../../assets/image/redLike.png'
+import {Data} from "../../service/shopServiceApi";
 
 
 function OneProduct({products, setLike, id, setId}: any) {
@@ -12,7 +13,7 @@ function OneProduct({products, setLike, id, setId}: any) {
 
     return (
         <div className="OneProduct">
-                {products !== undefined && products.map((item: any) => 
+                {products !== undefined && products.map((item: Data) =>
                     { if(item.id === id) {
                         return <div className={'OneProductContainer'}>
                             <div className='imgOneProductContainer' onClick={() => setId(item.id)}>
