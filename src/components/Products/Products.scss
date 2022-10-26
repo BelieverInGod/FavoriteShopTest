@@ -8,12 +8,13 @@
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
-}
+  }
+
   .productContainer {
     max-height: 257px;
     cursor: pointer;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -26,17 +27,19 @@
     @media screen and (max-width: 1000px) {
       font-size: 10px;
       width: 100px;
-  }
-  
+    }
+
 
     .imgProductContainer {
       display: flex;
       justify-content: center;
+
       .imgProduct {
         width: 60%;
         height: 40%;
       }
     }
+
     .priceBox {
       border-top: 1px solid #414141;
       justify-content: space-around;
@@ -46,24 +49,26 @@
       font-size: medium;
       height: auto;
       align-items: center;
+
       .active-like {
         background: #414141;
         border-radius: 15%;
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
       }
+
       @media screen and (max-width: 1000px) {
-          height: 50px;
-          font-size: 10px;
+        height: 50px;
+        font-size: 10px;
       }
-      
+
       @media screen and (max-width: 660px) {
-          height: 20px;
-          font-size: 5px;
+        height: 20px;
+        font-size: 5px;
       }
     }
   }
-  
+
   .productContainer:hover {
     transform: scale(1.05);
   }

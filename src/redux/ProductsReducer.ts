@@ -22,7 +22,7 @@ const ProductsReducer = (state = initialState, action: AnyAction) => {
             return {
                 ...state,
                 products: state.products.map(item => {
-                    if(item.id === action.id) {
+                    if (item.id === action.id) {
                         return {
                             ...item,
                             like: action.like,
@@ -37,7 +37,7 @@ const ProductsReducer = (state = initialState, action: AnyAction) => {
     }
 }
 
-export const setLike = (id: any, like:boolean) => ({type: SET_LIKE, id, like})
+export const setLike = (id: any, like: boolean) => ({type: SET_LIKE, id, like})
 export const setProducts = (products: {}) => ({type: SET_PRODUCTS, products})
 export const setMoreProducts = (products: {}) => ({type: SET_MORE_PRODUCT, products})
 

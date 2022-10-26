@@ -5,6 +5,7 @@ import redLike from '../../assets/image/redLike.png'
 import {connect} from "react-redux";
 import {setLike, setProducts} from "../../redux/ProductsReducer";
 import {useEffect, useState} from "react";
+import useMedia from 'use-media';
 import {Data, GetDataResponse, shopServiceApi} from "../../service/shopServiceApi";
 import {Grid} from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,7 @@ import { Link } from 'react-router-dom';
 
 function Products({products, setProducts, setLike}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
+    const isWide = useMedia({minWidth: '800px'});
 
     useEffect(() => {
         localStorage.length !== 0
@@ -38,7 +40,7 @@ function Products({products, setProducts, setLike}: any) {
         <div className="Products">
             <Grid container rowSpacing={2} columnSpacing={2} xs={12}>
                 {products !== undefined && products.map((item: Data) => <Grid key={item.id} item
-                                                                             xs={3}>
+                                                                             xs={isWide ? 3 : 12}>
                         
                             <div className={'productContainer'}>
                                 <Link to={`/${item.id}`} className='imgProductContainer'>

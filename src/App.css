@@ -1,7 +1,7 @@
 .mainPage {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  background: white;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    background: white;
+    justify-content: space-around;
 }

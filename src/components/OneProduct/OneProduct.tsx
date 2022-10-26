@@ -1,23 +1,19 @@
 import './OneProduct.scss';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 import {setLike, setProducts} from "../../redux/ProductsReducer";
 import likeIcon from '../../assets/image/likeIcon.png'
 import redLike from '../../assets/image/redLike.png'
-import {Data} from "../../service/shopServiceApi";
+import {Data, GetDataResponse, shopServiceApi} from "../../service/shopServiceApi";
 import {useParams} from "react-router-dom";
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 
 function OneProduct({products, setLike}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
     const {id} = useParams()
     let arr = JSON.parse(localStorage.getItem("names") || '{}')
-
-    useEffect (() => {
-        arr = JSON.parse(localStorage.getItem("names") || '{}')
-    }, [arr])
 
     const likeInLocal = (id: string, bool: boolean) => {
         setLike(id, bool)
@@ -26,11 +22,11 @@ function OneProduct({products, setLike}: any) {
 
     return (
         <div className="OneProduct">
-                {arr.map((item: Data) =>
-                    { if(item.id == id) {
+            {arr.map((item: Data) => {
+                    if (item.id == id) {
                         return <div className={'OneProductContainer'}>
-                            <div className='imgOneProductContainer' >
-                                    <img src={srcImg + item.src} alt={item.id} className='imgOneProduct'/>
+                            <div className='imgOneProductContainer'>
+                                <img src={srcImg + item.src} alt={item.id} className='imgOneProduct'/>
                             </div>
                             <div className={'priceOneProductBox'}>
                                 <div>
@@ -42,7 +38,8 @@ function OneProduct({products, setLike}: any) {
                                         !item.like ?
                                             <img src={likeIcon} alt={'likeIcon'}
                                                  onClick={() => likeInLocal(item.id, true)}/> :
-                                            <img src={redLike} className={'active-like'} alt={'redLike'} onClick={() => likeInLocal(item.id, false)}/>
+                                            <img src={redLike} className={'active-like'} alt={'redLike'}
+                                                 onClick={() => likeInLocal(item.id, false)}/>
                                     }
                                 </div>
                             </div>
@@ -51,9 +48,8 @@ function OneProduct({products, setLike}: any) {
                             </div>
                         </div>
                     }
-                    }
-           
-                )}
+                }
+            )}
         </div>
     );
 }
