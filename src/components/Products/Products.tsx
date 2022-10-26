@@ -4,7 +4,7 @@ import redLike from '../../assets/image/redLike.png'
 
 import {connect} from "react-redux";
 import {setLike, setProducts} from "../../redux/ProductsReducer";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {Data, GetDataResponse, shopServiceApi} from "../../service/shopServiceApi";
 import {Grid} from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 function Products({products, setProducts, setLike}: any) {
     const srcImg = 'https://testbackend.nc-one.com'
+
     useEffect(() => {
         localStorage.length !== 0
             ?
@@ -31,6 +32,7 @@ function Products({products, setProducts, setLike}: any) {
         setLike(id, bool)
         localStorage.setItem("names", JSON.stringify(products));
     }
+
 
     return (
         <div className="Products">
